@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Register - Brain Tumor Prediction App{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="form-container">
+        <h2>Create Your Account</h2>
+        <form method="POST" class="stylish-form">
+            <div class="input-group">
+                <input type="text" id="username" name="username" required placeholder=" ">
+                <label for="username">Username</label>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" name="email" required placeholder=" ">
+                <label for="email">Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="password" required placeholder=" ">
+                <label for="password">Password</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+   <!-- Social Sign-In Options -->
+<div class="social-signin">
+    <p>Or sign up with</p>
+    <button class="btn google-btn" onclick="window.location.href='https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&ifkv=AcMMx-ceoLDxOJaSXFqrvIH916gRU_Es3U-vpHbOb-6Z_hmHPCCoeB8O8y1BBYBZ8a070dEf12oGjA&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S875356762%3A1730561645361894&ddm=1'">Sign in with Google</button>
+    <button class="btn facebook-btn" onclick="window.location.href='https://www.facebook.com/'">Sign in with Facebook</button>
+</div>
+
+
+        <p class="form-footer">Already have an account? <a href="{{ url_for('login') }}">Log In</a></p>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Existing styles */
+    /* ... */
+
+    /* Social Sign-In Styles */
+    .social-signin {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .social-signin p {
+        margin: 10px 0;
+        font-size: 14px;
+        color: #6c757d;
+    }
+
+    .google-btn, .facebook-btn {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .google-btn {
+        background-color: #db4437;
+    }
+
+    .google-btn:hover {
+        background-color: #c33d2e;
+    }
+
+    .facebook-btn {
+        background-color: #3b5998;
+    }
+
+    .facebook-btn:hover {
+        background-color: #334d84;
+    }
+</style>
+{% endblock %}
